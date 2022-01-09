@@ -1,5 +1,5 @@
 # TWiDAOs
 
 <p align="center">
-  <img src="assets/readme.png">
+  <img src="assets/ogp.png">
 </p>
