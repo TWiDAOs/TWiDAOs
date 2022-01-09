@@ -1,0 +1,25 @@
+name: Pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: |
+          yarn install --frozen-lockfile
+      - working-directory: packages/home
+        run: |
+          yarn run build
+      - working-directory: packages/home
+        run: |
+          yarn run export
+      - uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./packages/home/out
+          # cname: wagumi.xyz
