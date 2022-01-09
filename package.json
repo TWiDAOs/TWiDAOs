@@ -1,0 +1,113 @@
+{
+  "name": "root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "homepage": "https://twidaos.com",
+  "bugs": {
+    "url": "https://github.com/TWiDAOs/TWiDAOs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TWiDAOs/TWiDAOs.git"
+  },
+  "license": "GPL-3.0-or-later",
+  "author": "TWiDAOs",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "eslint:cmd": "eslint --config .eslintrc.js --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
+    "eslint:fix": "yarn run eslint:cmd . --fix",
+    "eslint:lint": "yarn run eslint:cmd .",
+    "fix": "concurrently 'yarn:*:fix'",
+    "generate": "nft-generate --save-config",
+    "hardhat": "npx hardhat",
+    "lint": "concurrently 'yarn:*:lint'",
+    "multi-semantic-release": "multi-semantic-release --sequential-init",
+    "multi-semantic-release:check": "multi-semantic-release --dry-run --sequential-init",
+    "ncu:check": "ncu --deep -p yarn",
+    "ncu:upgrade": "ncu --deep -u -p yarn",
+    "npm-package-json:lint": "npmPkgJsonLint .",
+    "prepare": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "prettier:cmd": "prettier --ignore-unknown",
+    "prettier:fix": "yarn run prettier:cmd --write .",
+    "prettier:lint": "yarn run prettier:cmd --check .",
+    "postpublish": "pinst --enable",
+    "release": "semantic-release",
+    "release:check": "semantic-release --dry-run",
+    "test": "turbo run test"
+  },
+  "npmpackagejsonlint": {
+    "extends": "npm-package-json-lint-config-default"
+  },
+  "resolutions": {
+    "@types/react": "^17.0.38"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.19.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "commitlint": "^16.0.1",
+    "concurrently": "^7.0.0",
+    "dotenv": "^10.0.0",
+    "eslint": "^8.6.0",
+    "eslint-config-next": "^12.0.7",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-editorconfig": "^3.2.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-mocha": "^10.0.3",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-tailwindcss": "^3.1.0",
+    "git-cz": "^4.8.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.7",
+    "npm-check-updates": "^12.1.0",
+    "npm-package-json-lint": "^5.4.2",
+    "npm-package-json-lint-config-default": "^3.0.0",
+    "postinstall-postinstall": "^2.1.0",
+    "prettier": "^2.5.1",
+    "prettier-plugin-packagejson": "^2.2.15",
+    "prettier-plugin-solidity": "^1.0.0-beta.19",
+    "prettier-plugin-sort-json": "^0.0.2",
+    "semantic-release": "^18.0.1",
+    "shx": "^0.3.3",
+    "turbo": "^1.0.24",
+    "typescript": "^4.4.4"
+  },
+  "turbo": {
+    "baseBranch": "origin/main",
+    "pipeline": {
+      "build": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "abi/**",
+          "artifacts/**",
+          "dist/**",
+          "typechain/**",
+          ".next/**"
+        ]
+      },
+      "test": {
+        "dependsOn": [
+          "build"
+        ]
+      }
+    }
+  }
+}

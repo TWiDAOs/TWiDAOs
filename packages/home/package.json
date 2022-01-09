@@ -1,0 +1,41 @@
+{
+  "name": "@twidaos/home",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Home for TWiDAOs",
+  "homepage": "https://twidaos.com",
+  "bugs": {
+    "url": "https://github.com/TWiDAOs/TWiDAOs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TWiDAOs/TWiDAOs.git"
+  },
+  "license": "GPL-3.0-or-later",
+  "author": "TWiDAOs",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/line-clamp": "^0.3.0",
+    "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.4.2",
+    "clsx": "^1.1.1",
+    "next": "^12.0.7",
+    "next-seo": "^4.28.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "tailwindcss": "^3.0.12"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/tailwindcss": "^3.0.2",
+    "typescript": "^4.4.4"
+  }
+}
