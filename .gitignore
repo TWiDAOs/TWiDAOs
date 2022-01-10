@@ -167,3 +167,7 @@ typechain
 
 packages/**/dist
 .turbo
+
+arweave.json
+audio
+cover
