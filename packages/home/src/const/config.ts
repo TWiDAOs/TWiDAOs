@@ -7,3 +7,4 @@ export const APPLE_URL =
 export const SPOTIFY_URL =
   "https://open.spotify.com/show/36KkrQBtnKWyy9vbFMUzs1";
 export const NEWSLETTER_URL = "https://www.getrevue.co/profile/twidaos";
+export const RSS_URL = "https://anchor.fm/s/75925c78/podcast/rss";

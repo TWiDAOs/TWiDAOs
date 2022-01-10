@@ -50,7 +50,7 @@ export const FooterLogo: FC = () => {
   return (
     <div className="mx-auto">
       <div className="flex flex-col justify-center items-center space-y-3">
-        <FooterTextLink href={APPLE_URL}>Apple Podcasts</FooterTextLink>
+        <FooterTextLink href={APPLE_URL}>Apple Podcast</FooterTextLink>
         <FooterTextLink href={SPOTIFY_URL}>Spotify</FooterTextLink>
         <FooterTextLink href={NEWSLETTER_URL}>Newsletter</FooterTextLink>
       </div>
