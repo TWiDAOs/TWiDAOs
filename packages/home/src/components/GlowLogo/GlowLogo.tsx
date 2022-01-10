@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import type { FC } from "react";
 
 import styles from "./GlowLogo.module.css";
@@ -8,8 +9,8 @@ export type GlowLogoProps = {
 
 export const GlowLogo: FC<GlowLogoProps> = ({ src }) => {
   return (
-    <div className="relative w-48 h-48">
-      <img alt="logo" src={src} className={styles.glow} />
+    <div className="w-64 h-64">
+      <img alt="logo" src={src} className={clsx("rounded-lg", styles.glow)} />
     </div>
   );
 };
