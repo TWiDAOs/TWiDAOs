@@ -9,7 +9,7 @@ export type GlowLogoProps = {
 
 export const GlowLogo: FC<GlowLogoProps> = ({ src }) => {
   return (
-    <div className="w-64 h-64">
+    <div className="w-64 md:w-96 lg:w-[26rem] h-64 md:h-96">
       <img alt="logo" src={src} className={clsx("rounded-lg", styles.glow)} />
     </div>
   );
