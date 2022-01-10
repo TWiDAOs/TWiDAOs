@@ -8,9 +8,9 @@ export const Seo: FC = () => {
       <Default
         noindex={false}
         nofollow={false}
-        title="TWiDAOs"
+        title="TWiDAOs | This Week in DAOs"
         canonical="https://twidaos.com"
-        description="TWiDAOs - This Week in DAOs"
+        description="DAOs are eating the world."
         openGraph={{
           locale: "en_US",
           site_name: "twidaos.com",
