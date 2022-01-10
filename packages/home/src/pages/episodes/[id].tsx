@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { MdHeadsetMic } from "react-icons/md";
 
 import { Layout } from "@/home/components/Layout";
@@ -10,7 +9,7 @@ export const EpisodesPage = ({ episode }): JSX.Element => {
       <div className="flex flex-col justify-center items-center space-y-8 h-full">
         <h1 className="text-4xl font-semibold text-white">{episode.title}</h1>
         <div className="flex flex-col">
-          <Image
+          <img
             className="rounded-md"
             src={episode.itunes.image}
             width={300}
