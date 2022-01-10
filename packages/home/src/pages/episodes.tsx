@@ -18,7 +18,7 @@ export const EpisodesPage = ({ feed }): JSX.Element => {
                   episode.title.length - 3,
                 )}`}
               >
-                {"#" + episode.title.slice(episode.title.length - 3)}
+                {episode.title}
               </Link>
             </h3>
           );

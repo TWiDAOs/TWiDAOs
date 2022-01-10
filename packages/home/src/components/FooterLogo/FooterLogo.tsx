@@ -21,7 +21,7 @@ export const FooterTextLink: FC<FooterIconLinkProps> = ({ children, href }) => {
   return (
     <a
       href={href}
-      className="text-3xl text-white hover:animate-pulse"
+      className="text-3xl text-white hover:underline hover:animate-pulse"
       target="_blank"
       rel="noopener noreferrer"
     >

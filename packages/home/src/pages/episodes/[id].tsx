@@ -1,13 +1,41 @@
-import { FooterLogo } from "@/home/components/FooterLogo";
+import Image from "next/image";
+import { MdHeadsetMic } from "react-icons/md";
+
 import { Layout } from "@/home/components/Layout";
 import { getFeed } from "@/home/lib/getFeed";
 
-export const EpisodesPage = ({ feed }): JSX.Element => {
+export const EpisodesPage = ({ episode }): JSX.Element => {
   return (
     <Layout>
-      <div className="flex flex-col justify-center items-center space-y-12 h-full">
-        {JSON.stringify(feed, null, 4)}
-        <FooterLogo />
+      <div className="flex flex-col justify-center items-center space-y-8 h-full">
+        <h1 className="text-4xl font-semibold text-white">{episode.title}</h1>
+        <div className="flex flex-col">
+          <Image
+            className="rounded-md"
+            src={episode.itunes.image}
+            width={300}
+            height={300}
+            alt="Cover"
+          />
+          <div className="flex justify-center mt-8">
+            <a
+              href={episode.link}
+              className="text-3xl font-semibold text-center text-white hover:underline hover:animate-pulse"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Listen
+              <span className="inline-block text-2xl">
+                <MdHeadsetMic className="ml-3" />
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          className="px-3 max-w-lg text-white"
+          dangerouslySetInnerHTML={{ __html: episode.content }}
+        />
       </div>
     </Layout>
   );
@@ -25,12 +53,16 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps = async context => {
+  const { id } = context.params;
   const feed = await getFeed();
+  const episode = feed.items.filter(episode => {
+    return episode.title.slice(episode.title.length - 3) === id;
+  })[0];
 
   return {
     props: {
-      feed,
+      episode,
     },
   };
 };
