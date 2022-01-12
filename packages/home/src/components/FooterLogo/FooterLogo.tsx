@@ -1,5 +1,5 @@
 import type { ReactNode, FC } from "react";
-import { BsBoxArrowUpRight } from "react-icons/bs";
+import { BsBoxArrowUpRight, BsNewspaper } from "react-icons/bs";
 import { FaDiscord, FaGithub, FaTwitter, FaAnchor } from "react-icons/fa";
 
 import {
@@ -7,7 +7,7 @@ import {
   ANCHOR_URL,
   DISCORD_URL,
   GITHUB_URL,
-  NEWSLETTER_URL,
+  REVUE_URL,
   TWITTER_URL,
   SPOTIFY_URL,
 } from "@/home/const/config";
@@ -52,7 +52,7 @@ export const FooterLogo: FC = () => {
       <div className="flex flex-col justify-center items-center space-y-3">
         <FooterTextLink href={APPLE_URL}>Apple Podcast</FooterTextLink>
         <FooterTextLink href={SPOTIFY_URL}>Spotify</FooterTextLink>
-        <FooterTextLink href={NEWSLETTER_URL}>Newsletter</FooterTextLink>
+        <FooterTextLink href={REVUE_URL}>Newsletter</FooterTextLink>
       </div>
       <div className="flex justify-center mt-12 space-x-6">
         <FooterIconLink href={ANCHOR_URL}>
@@ -62,6 +62,10 @@ export const FooterLogo: FC = () => {
         <FooterIconLink href={DISCORD_URL}>
           <span className="sr-only">Discord</span>
           <FaDiscord className="w-8 h-8" />
+        </FooterIconLink>
+        <FooterIconLink href={REVUE_URL}>
+          <span className="sr-only">Revue</span>
+          <BsNewspaper className="w-8 h-8" />
         </FooterIconLink>
         <FooterIconLink href={GITHUB_URL}>
           <span className="sr-only">Github</span>

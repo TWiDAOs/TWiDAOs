@@ -4,7 +4,7 @@ import Marquee from "react-fast-marquee";
 import {
   APPLE_URL,
   DISCORD_URL,
-  NEWSLETTER_URL,
+  REVUE_URL,
   SPOTIFY_URL,
   TWITTER_URL,
 } from "@/home/const/config";
@@ -47,7 +47,7 @@ export const EpisodeMarquee: FC<EpisodeMarqueeProps> = ({
       <EpisodeExternalLink href={APPLE_URL}>
         Listen on Apple Podcast
       </EpisodeExternalLink>
-      <EpisodeExternalLink href={NEWSLETTER_URL}>
+      <EpisodeExternalLink href={REVUE_URL}>
         New Newsletter Everyweek
       </EpisodeExternalLink>
       <EpisodeExternalLink href={SPOTIFY_URL}>
